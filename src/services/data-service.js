@@ -2,14 +2,12 @@
 import client from './client';
 
 const dataService = store => next => action => {
-	debugger
 	next(action)
 	switch (action.type) {
-  	case 'GET_BOOK_DATA':
+	  	case 'GET_BOOK_DATA':
       client({method: 'GET',
       headers: {"Accept": "application/json"},
       path: 'http://localhost:8181/albums'}).then((response) => {
-					debugger
 					console.log(response);
   				// const data = JSON.parse(response.entity)
   				next({
