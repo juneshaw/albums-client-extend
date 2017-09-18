@@ -6,3 +6,11 @@ export function selectBook(book) {
     payload: book
   };
 }
+
+export function buyBook(book) {
+  console.log('book to buy', book)
+  return {
+    type: 'BUY_BOOK',
+    payload: book
+  };
+}
