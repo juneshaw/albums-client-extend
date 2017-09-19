@@ -4,12 +4,6 @@ import { buyBook } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class BookDetail extends Component {
-  handleClick(link) {
-    console.log('link: ', link)
-    this.props.buyBook(link)
-    // e.preventDefault()
-    // purchaseAlbum(this.props.book.links["rel":"purchase.album")
-  }
 
   render() {
     if (!this.props.book) {
@@ -21,8 +15,11 @@ class BookDetail extends Component {
         <div>Title: {this.props.book.title}</div>
         <div>Artist: {this.props.book.artist.name}</div>
         <div>Stock Level: {this.props.book.stockLevel}</div>
-        <h1>{this.props.book.links[2].href}</h1>
-        {this.props.book.links ? <p><a onClick={this.handleClick(this.props.book.links[2].href)}>Buy album</a></p> : ''}
+        <h1>{this.props.book.links.findIndex((obj => obj.rel === 'album.purchase'))}</h1>
+        {this.props.book.links.findIndex((obj => obj.rel === 'album.purchase')) >= 0 ?
+          <p><a onClick={() => this.props.buyBook(this.props.book.links[this.props.book.links.findIndex((obj => obj.rel === 'album.purchase'))]['href'])}>Buy album</a></p> :
+           ''}
+
       </div>
     );
   }
