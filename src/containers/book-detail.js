@@ -15,11 +15,9 @@ class BookDetail extends Component {
         <div>Title: {this.props.book.title}</div>
         <div>Artist: {this.props.book.artist.name}</div>
         <div>Stock Level: {this.props.book.stockLevel}</div>
-        <h1>{this.props.book.links.findIndex((obj => obj.rel === 'album.purchase'))}</h1>
         {this.props.book.links.findIndex((obj => obj.rel === 'album.purchase')) >= 0 ?
           <p><a onClick={() => this.props.buyBook(this.props.book.links[this.props.book.links.findIndex((obj => obj.rel === 'album.purchase'))]['href'])}>Buy album</a></p> :
            ''}
-
       </div>
     );
   }
@@ -31,9 +29,6 @@ function mapStateToProps(state) {
   };
 }
 
-
-// Anything returned from this function will end up as props
-// on the BookList container
 function mapDispatchToProps(dispatch) {
   // Whenever selectBook is called, the result shoudl be passed
 // to all of our reducers

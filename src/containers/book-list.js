@@ -27,15 +27,11 @@ class BookList extends Component {
 }
 
 function mapStateToProps(state) {
-  // Whatever is returned will show up as props
-  // inside of BookList
   return {
     books: state.books
   };
 }
 
-// Anything returned from this function will end up as props
-// on the BookList container
 function mapDispatchToProps(dispatch) {
   // Whenever selectBook is called, the result shoudl be passed
 // to all of our reducers
