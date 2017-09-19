@@ -2,10 +2,10 @@
 // this reducer is responsible for
 export default function(state = null, action) {
   switch(action.type) {
-    case 'BOOK_SELECTED_DATA': {
+    case 'ALBUM_SELECTED_DATA': {
       return action.data.entity;
     }
-    case 'BUY_BOOK_DATA': {
+    case 'BUY_ALBUM_DATA': {
       return action.data.entity;
     }
     default:

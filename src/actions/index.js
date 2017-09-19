@@ -1,15 +1,15 @@
-export function selectBook(book) {
-  // selectBook is an ActionCreator, it needs to return an action,
+export function selectAlbum(album) {
+  // selectAlbum is an ActionCreator, it needs to return an action,
   // an object with a type property.
   return {
-    type: 'BOOK_SELECTED',
-    payload: book
+    type: 'ALBUM_SELECTED',
+    payload: album
   };
 }
 
-export function buyBook(book) {
+export function buyAlbum(album) {
   return {
-    type: 'BUY_BOOK',
-    payload: book
+    type: 'BUY_ALBUM',
+    payload: album
   };
 }

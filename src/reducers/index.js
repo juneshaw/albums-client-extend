@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import BooksReducer from './reducer_books';
-import ActiveBook from './reducer_active_book';
+import AlbumsReducer from './reducer_albums';
+import ActiveAlbum from './reducer_active_album';
 import Loading from './reducer_loading';
 
 const rootReducer = combineReducers({
   loading: Loading,
-  books: BooksReducer,
-  activeBook: ActiveBook
+  albums: AlbumsReducer,
+  activeAlbum: ActiveAlbum
 });
 
 export default rootReducer;

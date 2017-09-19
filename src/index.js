@@ -17,4 +17,4 @@ ReactDOM.render(
   , document.querySelector('.container'));
 
 
-store.dispatch({type: 'GET_BOOK_DATA'})
+store.dispatch({type: 'GET_ALBUM_DATA'})
